@@ -2,7 +2,7 @@
 
 # Image and model names
 TEST_IMG=ADE_val_00000062.jpg
-MODEL_NAME=ade20k-resnet50dilated-ppm_deepsup
+MODEL_NAME=ade20k-mobilenetv2dilated-c1_deepsup
 MODEL_PATH=ckpt/$MODEL_NAME
 RESULT_PATH=./
 
@@ -20,7 +20,7 @@ if [ ! -e $DECODER ]; then
   wget -P $MODEL_PATH http://sceneparsing.csail.mit.edu/model/pytorch/$DECODER
 fi
 if [ ! -e $TEST_IMG ]; then 
-  wget -P $RESULT_PATH https://drive.google.com/file/d/1Ar2DeI8cO2N3ehxx1toyJ5xIT_GO8AOD/view?usp=sharing
+  wget -P $RESULT_PATH http://sceneparsing.csail.mit.edu/data/ADEChallengeData2016/images/validation/$TEST_IMG
 fi
 
 if [ -z "$DOWNLOAD_ONLY" ]
